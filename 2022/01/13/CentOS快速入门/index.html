@@ -1,0 +1,685 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="小颗粒" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="小颗粒" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="小颗粒" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Docker" />
+
+
+<link rel="canonical" href="http://example.com/2022/01/13/CentOS%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+
+
+
+  <title>
+CentOS快速入门 - 编程 |
+小颗粒 = 夏日炎炎，有你超甜</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">CentOS快速入门
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-01-13 20:09:07">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-01-13T20:09:07+08:00">2022-01-13</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">小颗粒</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="item" rel="index" title="分类于 编程"><span itemprop="name">编程</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/13/CentOS%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="࿆孤冷༢">
+    <meta itemprop="description" content="夏日炎炎，有你超甜, 本人是个小小程序员，此博客一是为了激励自己学习，二是为了记录自己的学习历程，以便及时回顾相关知识。">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="小颗粒">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="centos目录结构"><a class="markdownIt-Anchor" href="#centos目录结构">#</a> CentOS 目录结构</h2>
+<p><strong>bin</strong> 存放二进制可执行文件（ls,cat,mkdir 等）</p>
+<p><strong>etc</strong>  存放系统配置文件</p>
+<p><strong>home</strong> 用户目录</p>
+<p><strong>usr</strong> 默认安装软件目录</p>
+<p><strong>var</strong> 存放运行时需要改变数据的文件</p>
+<h2 id="操作文件"><a class="markdownIt-Anchor" href="#操作文件">#</a> 操作文件</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ls</td>
+<td style="text-align:center">显示文件和目录列表</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">列出文件的详细信息</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-a</td>
+<td style="text-align:center">列出所有文件，包含隐藏文件</td>
+</tr>
+<tr>
+<td style="text-align:center">mkdir</td>
+<td style="text-align:center">创建目录</td>
+<td style="text-align:center">mkdir [-p] dirname</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-p</td>
+<td style="text-align:center">创建多层目录</td>
+</tr>
+<tr>
+<td style="text-align:center">cd</td>
+<td style="text-align:center">切换目录</td>
+<td style="text-align:center">cd [dirname]</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">touch</td>
+<td style="text-align:center">生成一个文件</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">echo</td>
+<td style="text-align:center">生成一个带内容的文件</td>
+<td style="text-align:center">echo aaa&gt;a.txt,echo bbb&gt;&gt;a.txt</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">cat</td>
+<td style="text-align:center">显示文本内容</td>
+<td style="text-align:center">cat filename</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">cp</td>
+<td style="text-align:center">复制文件或目录</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">rm</td>
+<td style="text-align:center">删除文件</td>
+<td style="text-align:center">rm name</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">强制删除文件或目录</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">同时删除该目录下所有文件</td>
+</tr>
+<tr>
+<td style="text-align:center">mv</td>
+<td style="text-align:center">移动文件或目录</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">find</td>
+<td style="text-align:center">在文件系统中查找指定的文件</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-name</td>
+<td style="text-align:center">文件名</td>
+</tr>
+<tr>
+<td style="text-align:center">grep</td>
+<td style="text-align:center">在指定的文本文件中查找指定的字符串</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">pwd</td>
+<td style="text-align:center">显示当前工作目录</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">ln</td>
+<td style="text-align:center">建立软链接</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">more</td>
+<td style="text-align:center">分页显示文本文件内容</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">head</td>
+<td style="text-align:center">显示文件开头内容</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">tail</td>
+<td style="text-align:center">显示文件结尾内容</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="压缩解压缩"><a class="markdownIt-Anchor" href="#压缩解压缩">#</a> 压缩解压缩</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tar</td>
+<td style="text-align:center">tar [-cxzjvf] filename/dirname</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">打包参数指令</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-x</td>
+<td style="text-align:center">解压参数指令</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-z</td>
+<td style="text-align:center">是否需要用 gzip 压缩</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-j</td>
+<td style="text-align:center">是否需要用 bzip2 压缩</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">压缩过程中显示文件</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">解压缩名称</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-tf</td>
+<td style="text-align:center">查看压缩文件里面的文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linux系统管理"><a class="markdownIt-Anchor" href="#linux系统管理">#</a> Linux 系统管理</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">stat</td>
+<td style="text-align:left">显示指定文件的相关信息</td>
+</tr>
+<tr>
+<td style="text-align:center">who</td>
+<td style="text-align:left">显示在线登录用户</td>
+</tr>
+<tr>
+<td style="text-align:center">hostname</td>
+<td style="text-align:left">显示主机名称</td>
+</tr>
+<tr>
+<td style="text-align:center">uname</td>
+<td style="text-align:left">显示系统信息</td>
+</tr>
+<tr>
+<td style="text-align:center">top</td>
+<td style="text-align:left">显示系统中各个进程的资源占用状况</td>
+</tr>
+<tr>
+<td style="text-align:center">ps</td>
+<td style="text-align:left">显示当前的进程状态</td>
+</tr>
+<tr>
+<td style="text-align:center">du</td>
+<td style="text-align:left">显示指定的文件（目录）已使用的磁盘空间的总量</td>
+</tr>
+<tr>
+<td style="text-align:center">df</td>
+<td style="text-align:left">显示文件系统磁盘空间的使用情况</td>
+</tr>
+<tr>
+<td style="text-align:center">free</td>
+<td style="text-align:left">显示当前内存和交换空间的使用情况</td>
+</tr>
+<tr>
+<td style="text-align:center">ip address</td>
+<td style="text-align:left">显示网络接口信息</td>
+</tr>
+<tr>
+<td style="text-align:center">ping</td>
+<td style="text-align:left">测试网络的连通性</td>
+</tr>
+<tr>
+<td style="text-align:center">clear</td>
+<td style="text-align:left">清屏</td>
+</tr>
+<tr>
+<td style="text-align:center">kill</td>
+<td style="text-align:left">杀死一个进程</td>
+</tr>
+</tbody>
+</table>
+<h2 id="开关机命令"><a class="markdownIt-Anchor" href="#开关机命令">#</a> 开关机命令</h2>
+<p>重启</p>
+<p>reboot</p>
+<p>shutdown -r now</p>
+<p>关机</p>
+<p>shutdown -h now</p>
+<h2 id="文件权限"><a class="markdownIt-Anchor" href="#文件权限">#</a> 文件权限</h2>
+<p>x xxx xxx xxx</p>
+<p>总共分为四组</p>
+<p>一组文件类型</p>
+<p>二组用户权限</p>
+<p>三组用户组权限</p>
+<p>四组其它用户权限</p>
+
+      <div class="tags">
+          <a href="/tags/Docker/" rel="tag"><i class="ic i-tag"></i> Docker</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-01-13 20:13:29" itemprop="dateModified" datetime="2022-01-13T20:13:29+08:00">2022-01-13</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>࿆孤冷༢ <i class="ic i-at"><em>@</em></i>小颗粒
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/01/13/CentOS%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="CentOS快速入门">http://example.com/2022/01/13/CentOS快速入门/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#centos%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text"> CentOS 目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text"> 操作文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="toc-number">3.</span> <span class="toc-text"> 压缩解压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text"> Linux 系统管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%85%B3%E6%9C%BA%E5%91%BD%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text"> 开关机命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">6.</span> <span class="toc-text"> 文件权限</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2022/01/13/CentOS%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" rel="bookmark" title="CentOS快速入门">CentOS快速入门</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="࿆孤冷༢"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">࿆孤冷༢</p>
+  <div class="description" itemprop="description">本人是个小小程序员，此博客一是为了激励自己学习，二是为了记录自己的学习历程，以便及时回顾相关知识。</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">1</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">1</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">1</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2022/01/13/CentOS%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="CentOS快速入门">CentOS快速入门</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">࿆孤冷༢ @ 小颗粒</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/01/13/CentOS快速入门/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

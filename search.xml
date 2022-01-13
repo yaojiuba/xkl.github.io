@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>CentOS快速入门</title>
+    <url>/2022/01/13/CentOS%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h2 id="centos目录结构"><a class="markdownIt-Anchor" href="#centos目录结构">#</a> CentOS 目录结构</h2>
+<p><strong>bin</strong> 存放二进制可执行文件（ls,cat,mkdir 等）</p>
+<p><strong>etc</strong>  存放系统配置文件</p>
+<p><strong>home</strong> 用户目录</p>
+<p><strong>usr</strong> 默认安装软件目录</p>
+<p><strong>var</strong> 存放运行时需要改变数据的文件</p>
+<h2 id="操作文件"><a class="markdownIt-Anchor" href="#操作文件">#</a> 操作文件</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ls</td>
+<td style="text-align:center">显示文件和目录列表</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">列出文件的详细信息</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-a</td>
+<td style="text-align:center">列出所有文件，包含隐藏文件</td>
+</tr>
+<tr>
+<td style="text-align:center">mkdir</td>
+<td style="text-align:center">创建目录</td>
+<td style="text-align:center">mkdir [-p] dirname</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-p</td>
+<td style="text-align:center">创建多层目录</td>
+</tr>
+<tr>
+<td style="text-align:center">cd</td>
+<td style="text-align:center">切换目录</td>
+<td style="text-align:center">cd [dirname]</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">touch</td>
+<td style="text-align:center">生成一个文件</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">echo</td>
+<td style="text-align:center">生成一个带内容的文件</td>
+<td style="text-align:center">echo aaa&gt;a.txt,echo bbb&gt;&gt;a.txt</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">cat</td>
+<td style="text-align:center">显示文本内容</td>
+<td style="text-align:center">cat filename</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">cp</td>
+<td style="text-align:center">复制文件或目录</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">rm</td>
+<td style="text-align:center">删除文件</td>
+<td style="text-align:center">rm name</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">强制删除文件或目录</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">同时删除该目录下所有文件</td>
+</tr>
+<tr>
+<td style="text-align:center">mv</td>
+<td style="text-align:center">移动文件或目录</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">find</td>
+<td style="text-align:center">在文件系统中查找指定的文件</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-name</td>
+<td style="text-align:center">文件名</td>
+</tr>
+<tr>
+<td style="text-align:center">grep</td>
+<td style="text-align:center">在指定的文本文件中查找指定的字符串</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">pwd</td>
+<td style="text-align:center">显示当前工作目录</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">ln</td>
+<td style="text-align:center">建立软链接</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">more</td>
+<td style="text-align:center">分页显示文本文件内容</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">head</td>
+<td style="text-align:center">显示文件开头内容</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">tail</td>
+<td style="text-align:center">显示文件结尾内容</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="压缩解压缩"><a class="markdownIt-Anchor" href="#压缩解压缩">#</a> 压缩解压缩</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tar</td>
+<td style="text-align:center">tar [-cxzjvf] filename/dirname</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">打包参数指令</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-x</td>
+<td style="text-align:center">解压参数指令</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-z</td>
+<td style="text-align:center">是否需要用 gzip 压缩</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-j</td>
+<td style="text-align:center">是否需要用 bzip2 压缩</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">压缩过程中显示文件</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">解压缩名称</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-tf</td>
+<td style="text-align:center">查看压缩文件里面的文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linux系统管理"><a class="markdownIt-Anchor" href="#linux系统管理">#</a> Linux 系统管理</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">stat</td>
+<td style="text-align:left">显示指定文件的相关信息</td>
+</tr>
+<tr>
+<td style="text-align:center">who</td>
+<td style="text-align:left">显示在线登录用户</td>
+</tr>
+<tr>
+<td style="text-align:center">hostname</td>
+<td style="text-align:left">显示主机名称</td>
+</tr>
+<tr>
+<td style="text-align:center">uname</td>
+<td style="text-align:left">显示系统信息</td>
+</tr>
+<tr>
+<td style="text-align:center">top</td>
+<td style="text-align:left">显示系统中各个进程的资源占用状况</td>
+</tr>
+<tr>
+<td style="text-align:center">ps</td>
+<td style="text-align:left">显示当前的进程状态</td>
+</tr>
+<tr>
+<td style="text-align:center">du</td>
+<td style="text-align:left">显示指定的文件（目录）已使用的磁盘空间的总量</td>
+</tr>
+<tr>
+<td style="text-align:center">df</td>
+<td style="text-align:left">显示文件系统磁盘空间的使用情况</td>
+</tr>
+<tr>
+<td style="text-align:center">free</td>
+<td style="text-align:left">显示当前内存和交换空间的使用情况</td>
+</tr>
+<tr>
+<td style="text-align:center">ip address</td>
+<td style="text-align:left">显示网络接口信息</td>
+</tr>
+<tr>
+<td style="text-align:center">ping</td>
+<td style="text-align:left">测试网络的连通性</td>
+</tr>
+<tr>
+<td style="text-align:center">clear</td>
+<td style="text-align:left">清屏</td>
+</tr>
+<tr>
+<td style="text-align:center">kill</td>
+<td style="text-align:left">杀死一个进程</td>
+</tr>
+</tbody>
+</table>
+<h2 id="开关机命令"><a class="markdownIt-Anchor" href="#开关机命令">#</a> 开关机命令</h2>
+<p>重启</p>
+<p>reboot</p>
+<p>shutdown -r now</p>
+<p>关机</p>
+<p>shutdown -h now</p>
+<h2 id="文件权限"><a class="markdownIt-Anchor" href="#文件权限">#</a> 文件权限</h2>
+<p>x xxx xxx xxx</p>
+<p>总共分为四组</p>
+<p>一组文件类型</p>
+<p>二组用户权限</p>
+<p>三组用户组权限</p>
+<p>四组其它用户权限</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+</search>
